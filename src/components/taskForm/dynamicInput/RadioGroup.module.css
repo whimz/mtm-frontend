@@ -1,0 +1,13 @@
+.radioGroup label{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: center;
+  gap: 12px;
+  max-width: 200px;
+}
+
+.radioGroup input{
+  width: auto;
+}

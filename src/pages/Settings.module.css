@@ -1,0 +1,40 @@
+.settingsPage {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.headerSection {
+  margin-bottom: 2rem;
+}
+
+.headerSection h1 {
+  color: #1a202c;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerText {
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+.widgetsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .settingsPage {
+    padding: 1rem;
+  }
+
+  .headerSection h1 {
+    font-size: 1.5rem;
+  }
+
+  .widgetsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,117 @@
+import { 
+  Form, 
+  useActionData, 
+  useNavigate, 
+  useNavigation, 
+  redirect 
+} from 'react-router-dom';
+
+import { BasicDetailsSection, ScheduleTimeSection, ActionsSection } from './sections';
+import InputDetailsSection from './sections/InputDetailsSection/InputDetailsSection';
+
+import { formatDateTime } from '../../util/helpers';
+import classes from './TaskForm.module.css';
+
+
+export default function TaskForm({ method, task }) {
+  const navigate = useNavigate();
+  const navigation = useNavigation();
+  const data = useActionData();
+  const isSubmitting = navigation.state === 'submitting';
+
+  function cancelHandler() {
+    navigate('..');
+  }
+
+  return (
+    <Form method={method} className={classes.form}>
+
+      <BasicDetailsSection task={task} />  
+      <InputDetailsSection task={task}/>
+      <ScheduleTimeSection task={task} />
+      
+      <input type="hidden" name="createdOn" value={formatDateTime(new Date())}/>
+      {/* TODO: Check if CREATE or EDIT */}
+      <input type="hidden" name="changedOn" value={formatDateTime(new Date())} />
+      
+      {data && data.errors && (
+        <ul>
+          {Object.values(data.errors).map((err) => (
+            <li key={err} className={classes.error}>{err}</li>
+          ))}
+        </ul>
+      )}
+      
+      <ActionsSection isSubmitting={isSubmitting} onCancel={cancelHandler} />
+    </Form>
+  );
+}
+
+
+export async function action({request, params}){
+
+  const method = request.method; 
+  const data = await request.formData();
+
+  const taskData = {
+    title: data.get('title'),
+    description: data.get('description'),
+    url: data.get('url'),
+    inputs: {
+      name: {
+        value: data.get('taskInputs.name.value'),
+        selector: data.get('taskInputs.name.selector')
+      },
+      tel: {
+        value: data.get('taskInputs.tel.value'),
+        selector: data.get('taskInputs.tel.selector')
+      },
+      email: {
+        value: data.get('taskInputs.email.value'),
+        selector: data.get('taskInputs.email.selector')
+      },
+      socials: {
+        value: data.get('taskInputs.socials.value'),
+        selector: data.get('taskInputs.socials.selector')
+      },
+      message: {
+        value: data.get('taskInputs.message.value'),
+        selector: data.get('taskInputs.message.selector')
+      }
+    },
+    scheduleType: data.get('scheduleType'),
+    scheduleTime: data.get('scheduleTime') ? (data.get('scheduleTime') + ":00") : null ,
+    cronExpression: data.get('cronExpression'),
+    createdOn: data.get('createdOn'),
+    changedOn: data.get('changedOn')
+  }
+
+  let url = 'http://localhost:8080/tasks';
+
+  if(method === 'PATCH'){
+    const taskId = params.taskId;
+    url = 'http://localhost:8080/tasks/' + taskId;
+  }
+
+  const response = await fetch(url, {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json'  
+    },
+    body: JSON.stringify(taskData)
+  });
+
+  if (response.status === 422){
+    return response;
+  }
+
+  if(!response.ok){
+    console.log(response);
+    throw new Response(
+      JSON.stringify({ message: 'Could not save task' }),
+      { status: 500 }
+    );
+  } 
+
+  return redirect('/tasks');
+}

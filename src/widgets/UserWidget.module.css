@@ -1,0 +1,49 @@
+.userWidget {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.userEmail {
+  font-weight: 500;
+  color: #1a202c;
+  font-size: 0.9rem;
+}
+
+.userLabel {
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.logoutButton {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logoutButton:hover {
+  background: #c53030;
+}
+
+@media (max-width: 768px) {
+  .userWidget {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .userInfo {
+    align-items: center;
+  }
+}

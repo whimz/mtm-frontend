@@ -1,0 +1,19 @@
+.react-js-cron {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.react-js-cron > div:last-child {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.react-js-cron-field .react-js-cron-select {
+  min-width: 100px;
+}
+
+.react-js-cron-field > span:first-child {
+  margin-right: 8px;
+}

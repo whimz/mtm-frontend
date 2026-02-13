@@ -1,0 +1,126 @@
+.statusBadge {
+  max-width: 92px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.statusBadge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Complete/Completed - Green gradient matching the theme */
+.complete {
+  background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.complete:hover {
+  background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
+}
+
+/* Failed - Red gradient matching the theme */
+.failed {
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  color: #742a2a;
+  border: 1px solid #fc8181;
+}
+
+.failed:hover {
+  background: linear-gradient(135deg, #fed7d7 0%, #fc8181 100%);
+}
+
+/* Pending - Yellow/Orange gradient */
+.pending {
+  background: linear-gradient(135deg, #fef5e7 0%, #feebc8 100%);
+  color: #d69e2e;
+  border: 1px solid #f6ad55;
+}
+
+.pending:hover {
+  background: linear-gradient(135deg, #feebc8 0%, #fbd38d 100%);
+}
+
+/* Running - Blue gradient matching app theme */
+.running {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  color: #2c5282;
+  border: 1px solid #90cdf4;
+}
+
+.running:hover {
+  background: linear-gradient(135deg, #bee3f8 0%, #90cdf4 100%);
+}
+
+/* Disabled - Gray gradient */
+.disabled {
+  background: linear-gradient(135deg, #f7fafc 0%, #e2e8f0 100%);
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
+}
+
+.disabled:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+}
+
+/* Scheduled - Purple gradient matching main app theme */
+.scheduled {
+  background: linear-gradient(135deg, #faf5ff 0%, #e9d8fd 100%);
+  color: #553c9a;
+  border: 1px solid #d6bcfa;
+}
+
+.scheduled:hover {
+  background: linear-gradient(135deg, #e9d8fd 0%, #d6bcfa 100%);
+}
+
+.statusIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+/* Size variants for different contexts */
+.statusBadge.small {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.625rem;
+  border-radius: 8px;
+}
+
+.statusBadge.large {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 16px;
+}
+
+/* Animation for running status */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.running .statusIcon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .statusBadge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .statusIcon {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,32 @@
+.inputDetails {
+  padding: 1rem;
+}
+
+.input-builder{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.input-builder-options{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-builder-nav{
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem;
+}
+
+.input-builder-menu{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.input-builder-nav button{
+  margin-top: 12px;
+}

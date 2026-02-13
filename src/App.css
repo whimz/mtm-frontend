@@ -1,0 +1,100 @@
+#root {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#root main{
+  width: 100%;
+  max-width: 1024px;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding-right: 24px;
+  padding-left: 24px;
+  text-align: center;
+}
+
+main > nav{
+  padding: 24px 0;
+}
+
+h1{
+  margin-bottom: 24px;
+}
+
+
+.card {
+  padding: 2em;
+}
+
+/* Base Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="tel"],
+input[type="datetime-local"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.25em 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus States */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #60a5fa; /* light blue focus border */
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Hover Effects */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="url"]:hover,
+input[type="tel"]:hover,
+input[type="datetime-local"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #888;
+}
+
+/* Textarea Specific Styling */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* URL Input */
+input[type="url"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23999' width='16' height='16'%3E%3Cpath strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'%3E%3C/path%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  padding-right: 36px;
+}
+
+/* Label Styling */
+label {
+  display: block;
+  margin-bottom: 0.4em;
+  font-weight: 500;
+  color: #333;
+}
+
+

@@ -1,0 +1,175 @@
+/* Form Elements Base Styles */
+label,
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #cbd5e0;
+}
+
+textarea {
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+label {
+  text-align: left;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Form Group */
+.form-group,
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+/* Outer Fieldset - Neutral with subtle border */
+fieldset {
+  border: 2px solid #e2e8f0;
+  padding: 1.5rem 1.25rem;
+  border-radius: 8px;
+  background: #fafbfc;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-weight: 600;
+  color: #1a202c;
+  padding: 0 0.75rem;
+  font-size: 1.1rem;
+  background: white;
+  border-radius: 4px;
+}
+
+/* Inner Fieldset - Lighter neutral with subtle accent border */
+fieldset.inner {
+  border: 2px solid #cbd5e0;
+  border-left: 4px solid #667eea;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+fieldset.inner legend {
+  color: #2d3748;
+  font-size: 1rem;
+  background: white;
+  padding: 0 0.5rem;
+}
+
+/* Nested fieldset alternative - Different accent color */
+fieldset fieldset.inner:nth-child(even) {
+  border-left-color: #4299e1;
+}
+
+/* Input States */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  background-color: #f7fafc;
+  color: #a0aec0;
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a0aec0;
+}
+
+/* Error State */
+input.error,
+textarea.error,
+select.error {
+  border-color: #fc8181;
+  background-color: #fff5f5;
+}
+
+input.error:focus,
+textarea.error:focus,
+select.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Success State */
+input.success,
+textarea.success,
+select.success {
+  border-color: #9ae6b4;
+  background-color: #f0fff4;
+}
+
+/* Help Text */
+.help-text {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-top: 0.25rem;
+}
+
+.error-text {
+  font-size: 0.85rem;
+  color: #e53e3e;
+  margin-top: 0.25rem;
+}
+
+/* Checkbox and Radio */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  display: inline-block;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  fieldset {
+    padding: 1rem;
+  }
+
+  fieldset.inner {
+    padding: 0.75rem;
+  }
+
+  legend {
+    font-size: 1rem;
+  }
+
+  fieldset.inner legend {
+    font-size: 0.9rem;
+  }
+}

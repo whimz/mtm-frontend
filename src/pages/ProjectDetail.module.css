@@ -1,0 +1,316 @@
+.projectDetail {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.headerContent {
+  margin-bottom: 1rem;
+}
+
+.backLink {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #764ba2;
+}
+
+.header h1 {
+  color: #1a202c;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.editButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.editButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.deleteButton {
+  background: #e53e3e;
+  color: white;
+}
+
+.deleteButton:hover {
+  background: #c53030;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.infoSection,
+.tasksSection {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.infoSection h2,
+.tasksSection h2 {
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+}
+
+.infoItem label {
+  flex-grow: 0;
+  flex-basis: 25%;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.infoItem p {
+  flex-shrink: 0;
+  color: #1a202c;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tasksSectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tasksSectionHeader h2 {
+  margin: 0;
+}
+
+.addTaskButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addTaskButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tasksPlaceholder {
+  text-align: center;
+  padding: 3rem;
+  color: #718096;
+  background: #f7fafc;
+  border-radius: 6px;
+  border: 2px dashed #e2e8f0;
+}
+
+.tasksList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.taskCard {
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f7fafc;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.taskCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.taskHeader h3 {
+  color: #1a202c;
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
+}
+
+.statusBadge {
+  min-width: 92px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.statusBadge.pending {
+  background: #fef5e7;
+  color: #d68910;
+}
+
+.statusBadge.running {
+  background: #ebf8ff;
+  color: #2c5282;
+}
+
+.statusBadge.completed {
+  background: #f0fff4;
+  color: #22543d;
+}
+
+.statusBadge.failed {
+  background: #fff5f5;
+  color: #742a2a;
+}
+
+.taskDescription {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.taskMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.viewTaskButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #667eea;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.viewTaskButton:hover {
+  background: #f7fafc;
+  border-color: #667eea;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.notFound h2 {
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.backButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.backButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+@media (max-width: 768px) {
+  .projectDetail {
+    padding: 1rem;
+  }
+
+  .header,
+  .infoSection,
+  .tasksSection {
+    padding: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .tasksSectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .addTaskButton {
+    text-align: center;
+  }
+
+  .tasksList {
+    grid-template-columns: 1fr;
+  }
+}
