@@ -4,9 +4,10 @@ import { createRouter } from "./router.jsx" // ← Import createRouter, not rout
 import { AuthProvider } from "./contexts/AuthContext.jsx"
 import { TaskStatusProvider } from "./contexts/TaskStatusContext.jsx"
 import WelcomePage from "./pages/WelcomePage.jsx"
+import { API_ENDPOINTS } from "./config/api.js"
 import "./App.css"
 
-const API = "http://localhost:8080/auth"
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -19,7 +20,7 @@ function App() {
     console.log("🎫 Token exists:", !!token)
 
     if (token) {
-      fetch(`${API}/me`, {
+      fetch(API_ENDPOINTS.AUTH_ME, {
         headers: { Authorization: token },
       })
         .then((res) => res.json())

@@ -5,9 +5,11 @@ export const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080"
 export const API_ENDPOINTS = {
   // Static endpoints
   AUTH: `${API_URL}/auth`,
+  AUTH_ME: `${API_URL}/auth/me`,
   TASKS: `${API_URL}/tasks`,
   PROJECTS: `${API_URL}/projects`,
   TASK_EVENTS: `${API_URL}/tasks/events`,
+  TASK_STATUS_UPDATES: `${API_URL}/tasks/events/status-updates`,
   GMAIL_ACCOUNTS: `${API_URL}/gmail/accounts`,
   GMAIL_AUTH: `${API_URL}/gmail/auth`,
   SCRAPE_FORMS: `${API_URL}/scrape-forms`,

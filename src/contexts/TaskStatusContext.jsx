@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState, useRef } from "react"
+import { API_ENDPOINTS } from "../config/api"
 
 const TaskStatusContext = createContext()
 
@@ -9,7 +10,7 @@ export function TaskStatusProvider({ children }) {
 
   useEffect(() => {
     console.log("📡 TaskStatusProvider: Opening SSE connection")
-    const eventSource = new EventSource("http://localhost:8080/tasks/events/status-updates")
+    const eventSource = new EventSource(API_ENDPOINTS.TASK_STATUS_UPDATES)
     eventSourceRef.current = eventSource
 
     eventSource.addEventListener("message", (event) => {
