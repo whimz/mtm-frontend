@@ -1,7 +1,6 @@
 import { useState } from "react"
 import styles from "./AuthForm.module.css"
-
-const API = "http://localhost:8080/auth"
+import { API_ENDPOINTS } from "../../config/api"
 
 export default function AuthForm({ onAuthSuccess }) {
   const [mode, setMode] = useState("login")
@@ -14,7 +13,7 @@ export default function AuthForm({ onAuthSuccess }) {
     setIsLoading(true)
 
     try {
-      const response = await fetch(`${API}/${mode}`, {
+      const response = await fetch(`${API_ENDPOINTS.AUTH}/${mode}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
