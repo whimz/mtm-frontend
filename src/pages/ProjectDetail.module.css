@@ -197,6 +197,10 @@
 
 .statusBadge {
   min-width: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.75rem;
